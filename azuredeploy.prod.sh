@@ -6,5 +6,3 @@ IP_ADDRESS=$(az vm list-ip-addresses --resource-group hectagon-jumpbox --name he
 ssh -i ~/.ssh/id_rsa $IP_ADDRESS sudo apt-get update
 ssh -i ~/.ssh/id_rsa $IP_ADDRESS sudo apt install docker.io curl nodejs npm
 ssh -i ~/.ssh/id_rsa $IP_ADDRESS sudo apt-get upgrade
-
-
