@@ -1,5 +1,5 @@
 #!/bin/sh
-#az group delete --name hetagon-jumpbox
+az group delete --name hectagon-jumpbox
 az group create --name hectagon-jumpbox --location "West US"
 SUBNET_ID=$(az network vnet subnet list --resource-group hectagon-shared --vnet-name hectagonvnet --query "[?name == 'jumpbox'].id" -o tsv)
 az vm create --name hectagonlinux --resource-group hectagon-jumpbox --image ubuntults --size Standard_DS2 --ssh-key-value @~/.ssh/id_rsa.pub --subnet $SUBNET_ID --public-ip-address-dns-name hectagonlinux
